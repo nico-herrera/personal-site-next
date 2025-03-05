@@ -6,6 +6,7 @@ import CustomCursor from "./components/CustomCursor";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import Link from "next/link";
 
 const fadeInUp = {
   initial: { y: 20, opacity: 0 },
@@ -15,669 +16,445 @@ const fadeInUp = {
 
 export default function Home() {
   return (
-    <>
-      <CustomCursor />
-      <Background3D />
-      <Navigation />
-      <ScrollToTop />
+    <main className="min-h-screen">
+      <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
+        <div className="flex flex-col items-end text-right-align">
+          {/* Header Section */}
+          <header className="mb-16 md:mb-24 w-full md:w-2/3 lg:w-1/2">
+            <h1 className="text-2xl md:text-3xl mb-4 tracking-tighter text-mono-100">
+              <span className="text-accent-primary">NICO</span> HERRERA
+            </h1>
+            <p className="text-sm md:text-base text-mono-400 mb-6">
+              LEAD SOFTWARE ENGINEER // FULL-STACK DEVELOPER
+            </p>
+            <div className="h-px w-16 bg-accent-primary ml-auto mb-6"></div>
+            <p className="text-sm md:text-base text-mono-300 max-w-md ml-auto">
+              Experienced software engineer specializing in architecting and
+              delivering client applications from concept through deployment.
+              Expert in building innovative, high-performance web solutions.
+            </p>
+          </header>
 
-      <main className="relative min-h-screen">
-        {/* Hero Section */}
-        <section className="h-screen flex items-center justify-center px-4">
-          <div className="max-w-6xl w-full">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="holo-panel p-8 md:p-12"
-            >
-              <motion.h1
-                className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 neon-text"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-              >
-                Nico Herrera
-              </motion.h1>
-              <motion.h2
-                className="text-xl md:text-2xl lg:text-3xl text-neon-blue mb-8"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-              >
-                Lead Full-Stack Engineer
-              </motion.h2>
-              <motion.p
-                className="text-lg md:text-xl text-gray-300 max-w-2xl"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-              >
-                Experienced software engineer specializing in architecting and
-                delivering client applications from concept through deployment.
-                Expert in building innovative, high-performance web solutions
-                with a focus on exceptional user experience.
-              </motion.p>
-              <motion.div
-                className="mt-8 flex gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.8 }}
-              >
-                <a href="#projects" className="cyber-button">
-                  View Projects
-                </a>
-                <a href="#contact" className="cyber-button">
-                  Contact Me
-                </a>
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
+          {/* About Section */}
+          <section className="mb-16 md:mb-24 w-full md:w-2/3 lg:w-1/2">
+            <h2 className="text-lg md:text-xl mb-4 tracking-tighter text-mono-100">
+              <span className="text-accent-primary">//</span> {"ABOUT"}
+            </h2>
+            <div className="terminal-panel mb-6">
+              <div className="terminal-header">
+                <div className="text-xs text-mono-400">profile.sys</div>
+                <div className="flex space-x-1">
+                  <div className="w-2 h-2 rounded-full bg-mono-600"></div>
+                  <div className="w-2 h-2 rounded-full bg-mono-600"></div>
+                  <div className="w-2 h-2 rounded-full bg-accent-primary"></div>
+                </div>
+              </div>
+              <div className="terminal-content">
+                <div className="terminal-line">
+                  <span className="terminal-prompt">$</span>
+                  <span className="terminal-text text-sm">
+                    Lead Software Engineer with expertise in building scalable
+                    web applications
+                  </span>
+                </div>
+                <div className="terminal-line">
+                  <span className="terminal-prompt">$</span>
+                  <span className="terminal-text text-sm">
+                    Passionate about clean code, user experience, and innovative
+                    solutions
+                  </span>
+                </div>
+                <div className="terminal-line">
+                  <span className="terminal-prompt">$</span>
+                  <span className="terminal-text text-sm">
+                    Based in Austin, Texas. Available for remote work worldwide
+                  </span>
+                </div>
+                <div className="terminal-line">
+                  <span className="terminal-prompt">$</span>
+                  <span className="terminal-text text-sm">
+                    Specializing in React/Next.js, TypeScript, and modern web
+                    technologies
+                  </span>
+                </div>
+              </div>
+            </div>
+            <p className="text-sm text-mono-400 ml-auto">
+              SYSTEM STATUS:{" "}
+              <span className="text-accent-primary">OPERATIONAL</span>
+            </p>
+          </section>
 
-        {/* Experience Section */}
-        <section id="experience" className="min-h-screen py-20 px-4">
-          <div className="max-w-6xl mx-auto">
-            <motion.h2
-              className="text-3xl md:text-4xl font-bold mb-12 neon-text text-center"
-              {...fadeInUp}
-            >
-              Work Experience
-            </motion.h2>
-            <div className="space-y-12">
-              {/* Experience 1 */}
-              <motion.div
-                className="holo-panel p-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="flex flex-col md:flex-row justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-neon-blue">
+          {/* Experience Section */}
+          <section className="mb-16 md:mb-24 w-full md:w-2/3 lg:w-1/2">
+            <h2 className="text-lg md:text-xl mb-4 tracking-tighter text-mono-100">
+              <span className="text-accent-primary">//</span> {"EXPERIENCE"}
+            </h2>
+            <div className="space-y-6">
+              <div className="terminal-panel">
+                <div className="terminal-header">
+                  <div className="text-xs text-mono-400">fusion92.log</div>
+                  <div className="flex space-x-1">
+                    <div className="w-2 h-2 rounded-full bg-mono-600"></div>
+                    <div className="w-2 h-2 rounded-full bg-mono-600"></div>
+                    <div className="w-2 h-2 rounded-full bg-accent-primary"></div>
+                  </div>
+                </div>
+                <div className="terminal-content">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-base text-mono-100">
                       Lead Full-Stack Engineer
                     </h3>
-                    <p className="text-gray-300">Fusion92</p>
+                    <span className="text-sm text-accent-primary">
+                      05/2023 - present
+                    </span>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <span className="text-gray-400">05/2023 - present</span>
-                    <span className="text-neon-green">Remote</span>
+                  <p className="text-sm text-mono-400 mb-2">
+                    Architected and delivered client applications from concept
+                    through deployment, consistently meeting deadlines and
+                    receiving exceptional client feedback.
+                  </p>
+                  <p className="text-sm text-mono-400">
+                    Spearheaded development of a Retrieval-Augmented Generation
+                    (RAG) system that significantly streamlined information
+                    access.
+                  </p>
+                </div>
+              </div>
+
+              <div className="terminal-panel">
+                <div className="terminal-header">
+                  <div className="text-xs text-mono-400">pulsr.log</div>
+                  <div className="flex space-x-1">
+                    <div className="w-2 h-2 rounded-full bg-mono-600"></div>
+                    <div className="w-2 h-2 rounded-full bg-mono-600"></div>
+                    <div className="w-2 h-2 rounded-full bg-accent-primary"></div>
                   </div>
                 </div>
-                <ul className="space-y-2 text-gray-300">
-                  <li className="flex">
-                    <span className="text-neon-blue mr-2">•</span>
-                    <span>
-                      Architected and delivered client applications from concept
-                      through deployment, consistently meeting deadlines and
-                      receiving exceptional client feedback
-                    </span>
-                  </li>
-                  <li className="flex">
-                    <span className="text-neon-blue mr-2">•</span>
-                    <span>
-                      Spearheaded development of a Retrieval-Augmented
-                      Generation (RAG) system that significantly streamlined
-                      information access and eliminated most manual document
-                      processing tasks
-                    </span>
-                  </li>
-                  <li className="flex">
-                    <span className="text-neon-blue mr-2">•</span>
-                    <span>
-                      Successfully rescued and led multiple stalled projects to
-                      completion, maintaining high code quality standards while
-                      meeting critical deadlines
-                    </span>
-                  </li>
-                  <li className="flex">
-                    <span className="text-neon-blue mr-2">•</span>
-                    <span>
-                      Mentored junior and mid-level developers through code
-                      reviews and pair programming, elevating team capabilities
-                      and accelerating professional growth
-                    </span>
-                  </li>
-                </ul>
-              </motion.div>
-
-              {/* Experience 2 */}
-              <motion.div
-                className="holo-panel p-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                <div className="flex flex-col md:flex-row justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-neon-blue">
+                <div className="terminal-content">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-base text-mono-100">
                       Senior Full-Stack Engineer
                     </h3>
-                    <p className="text-gray-300">Pulsr</p>
+                    <span className="text-sm text-accent-primary">
+                      03/2022 - 05/2024
+                    </span>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <span className="text-gray-400">03/2022 - 05/2024</span>
-                    <span className="text-neon-green">Remote</span>
-                  </div>
-                </div>
-                <ul className="space-y-2 text-gray-300">
-                  <li className="flex">
-                    <span className="text-neon-blue mr-2">•</span>
-                    <span>
-                      Led technical innovation as primary developer in a
-                      two-person team for a fintech startup, driving application
-                      architecture decisions and feature planning
-                    </span>
-                  </li>
-                  <li className="flex">
-                    <span className="text-neon-blue mr-2">•</span>
-                    <span>
-                      Executed comprehensive platform rebuild while maintaining
-                      near-perfect uptime, incorporating iterative improvements
-                      based on continuous user feedback
-                    </span>
-                  </li>
-                  <li className="flex">
-                    <span className="text-neon-blue mr-2">•</span>
-                    <span>
-                      Developed responsive, high-performance web application
-                      that dramatically improved user engagement and conversion
-                      metrics
-                    </span>
-                  </li>
-                </ul>
-              </motion.div>
-
-              {/* Experience 3 */}
-              <motion.div
-                className="holo-panel p-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <div className="flex flex-col md:flex-row justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-neon-blue">
-                      Full-Stack Engineer
-                    </h3>
-                    <p className="text-gray-300">American National Insurance</p>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <span className="text-gray-400">10/2021 - 03/2022</span>
-                    <span className="text-neon-green">League City, TX</span>
-                  </div>
-                </div>
-                <ul className="space-y-2 text-gray-300">
-                  <li className="flex">
-                    <span className="text-neon-blue mr-2">•</span>
-                    <span>
-                      Contributed to several ongoing applications for Agent
-                      Services
-                    </span>
-                  </li>
-                  <li className="flex">
-                    <span className="text-neon-blue mr-2">•</span>
-                    <span>
-                      Implemented several user-facing features with MaterialUI
-                    </span>
-                  </li>
-                  <li className="flex">
-                    <span className="text-neon-blue mr-2">•</span>
-                    <span>
-                      Managed several different applications while participating
-                      in On-Call rotation
-                    </span>
-                  </li>
-                </ul>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Projects Section */}
-        <section id="projects" className="min-h-screen py-20 px-4">
-          <div className="max-w-6xl mx-auto">
-            <motion.h2
-              className="text-3xl md:text-4xl font-bold mb-12 neon-text text-center"
-              {...fadeInUp}
-            >
-              Featured Projects
-            </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Project 1 */}
-              <motion.div
-                className="holo-panel p-6"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.2 }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-bold mb-2 text-neon-blue">
-                  Internal AI Project
-                </h3>
-                <p className="text-sm text-neon-green mb-4">
-                  Lead Full Stack Engineer
-                </p>
-                <p className="text-gray-300 mb-4">
-                  Architected and developed an enterprise-grade multi-tenant
-                  platform with role-based access control that securely isolates
-                  client data across organizational boundaries.
-                </p>
-                <ul className="space-y-2 text-gray-300 mb-4">
-                  <li className="flex text-sm">
-                    <span className="text-neon-blue mr-2">•</span>
-                    <span>
-                      Engineered an advanced content management system using
-                      Sanity CMS with dynamic white-labeling capabilities
-                    </span>
-                  </li>
-                  <li className="flex text-sm">
-                    <span className="text-neon-blue mr-2">•</span>
-                    <span>
-                      Implemented sophisticated AI features using OpenAI and
-                      Azure Search services
-                    </span>
-                  </li>
-                </ul>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs bg-holo-light px-2 py-1 rounded text-neon-blue">
-                    React
-                  </span>
-                  <span className="text-xs bg-holo-light px-2 py-1 rounded text-neon-purple">
-                    TypeScript
-                  </span>
-                  <span className="text-xs bg-holo-light px-2 py-1 rounded text-neon-green">
-                    OpenAI
-                  </span>
-                  <span className="text-xs bg-holo-light px-2 py-1 rounded text-neon-pink">
-                    Azure
-                  </span>
-                  <span className="text-xs bg-holo-light px-2 py-1 rounded text-white">
-                    Sanity CMS
-                  </span>
-                </div>
-              </motion.div>
-
-              {/* Project 2 */}
-              <motion.div
-                className="holo-panel p-6"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.2 }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-bold mb-2 text-neon-blue">
-                  New York Life
-                </h3>
-                <p className="text-sm text-neon-green mb-4">
-                  Senior Front-End Engineer
-                </p>
-                <p className="text-gray-300 mb-4">
-                  Completed integration of critical unfinished features under
-                  tight deadline constraints, preventing significant project
-                  delays and business impact.
-                </p>
-                <ul className="space-y-2 text-gray-300 mb-4">
-                  <li className="flex text-sm">
-                    <span className="text-neon-blue mr-2">•</span>
-                    <span>
-                      Developed innovative agent-facing screens that
-                      substantially streamlined case processing workflows
-                    </span>
-                  </li>
-                  <li className="flex text-sm">
-                    <span className="text-neon-blue mr-2">•</span>
-                    <span>
-                      Collaborated effectively with numerous team members across
-                      multiple departments
-                    </span>
-                  </li>
-                </ul>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs bg-holo-light px-2 py-1 rounded text-neon-blue">
-                    React
-                  </span>
-                  <span className="text-xs bg-holo-light px-2 py-1 rounded text-neon-purple">
-                    TypeScript
-                  </span>
-                  <span className="text-xs bg-holo-light px-2 py-1 rounded text-neon-green">
-                    Node.js
-                  </span>
-                  <span className="text-xs bg-holo-light px-2 py-1 rounded text-white">
-                    Material UI
-                  </span>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Skills Section */}
-        <section id="skills" className="min-h-screen py-20 px-4">
-          <div className="max-w-6xl mx-auto">
-            <motion.h2
-              className="text-3xl md:text-4xl font-bold mb-12 neon-text text-center"
-              {...fadeInUp}
-            >
-              Technical Skills
-            </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
-                className="holo-panel p-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <h3 className="text-xl font-bold mb-6 text-neon-blue">
-                  Libraries & Frameworks
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-blue">
-                    React
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-purple">
-                    Redux
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-green">
-                    NextJS
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-pink">
-                    Context API
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-white">
-                    Jest
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-blue">
-                    Node.js
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-purple">
-                    Express
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-green">
-                    Knex
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-pink">
-                    SvelteJS
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-white">
-                    TailwindCSS
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-blue">
-                    Styled Components
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-purple">
-                    MaterialUI
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-green">
-                    Ngrx
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-pink">
-                    Angular
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-white">
-                    Web3
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-blue">
-                    SvelteKit
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-purple">
-                    MongoDB
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-green">
-                    VueJS
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-pink">
-                    NuxtJS
-                  </span>
-                </div>
-
-                <h3 className="text-xl font-bold my-6 text-neon-blue">
-                  Database
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-blue">
-                    Heroku
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-purple">
-                    SQL
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-green">
-                    NoSQL
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-pink">
-                    GraphQL
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-white">
-                    REST
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-blue">
-                    Restful API
-                  </span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="holo-panel p-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                <h3 className="text-xl font-bold mb-6 text-neon-blue">
-                  Programming Languages
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-blue">
-                    JavaScript
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-purple">
-                    TypeScript
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-green">
-                    HTML5
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-pink">
-                    CSS3
-                  </span>
-                </div>
-
-                <h3 className="text-xl font-bold my-6 text-neon-blue">
-                  Other Skills
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-blue">
-                    GitHub
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-purple">
-                    Vercel
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-green">
-                    Algorithms
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-pink">
-                    Networking
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-white">
-                    Scalability
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-blue">
-                    Unit Testing
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-purple">
-                    Deployment
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-green">
-                    Design Patterns
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-pink">
-                    Docker
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-white">
-                    Availability
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-blue">
-                    Agile
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-purple">
-                    Performance Optimization
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-green">
-                    npm
-                  </span>
-                  <span className="text-sm bg-holo-light px-3 py-1 rounded text-neon-pink">
-                    Azure
-                  </span>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* About Section */}
-        <section id="about" className="min-h-screen py-20 px-4">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              className="holo-panel p-8 md:p-12"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 neon-text">
-                About Me
-              </h2>
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <p className="text-lg text-gray-300 mb-6">
-                    I&apos;m a Lead Front-End Engineer with extensive experience
-                    in building enterprise-grade applications and leading
-                    development teams. My expertise spans from concept through
-                    deployment, with a focus on creating exceptional user
-                    experiences and maintaining high code quality standards.
+                  <p className="text-sm text-mono-400 mb-2">
+                    Led technical innovation as primary developer in a
+                    two-person team for a fintech startup, driving application
+                    architecture decisions and feature planning.
                   </p>
-                  <p className="text-lg text-gray-300">
-                    I&apos;m passionate about mentoring junior developers,
-                    rescuing stalled projects, and implementing innovative
-                    solutions that drive business value. My recent work includes
-                    developing sophisticated AI features and building
-                    high-performance web applications.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-4 text-neon-blue">
-                    Location
-                  </h3>
-                  <p className="text-lg text-gray-300 mb-6">
-                    Based in Austin, Texas
-                  </p>
-
-                  <h3 className="text-xl font-bold mb-4 text-neon-blue">
-                    Specialization
-                  </h3>
-                  <p className="text-lg text-gray-300">
-                    Front-end development with React/Next.js, TypeScript, and
-                    modern web technologies. Experienced in full-stack
-                    development with Node.js and various database technologies.
+                  <p className="text-sm text-mono-400">
+                    Executed comprehensive platform rebuild while maintaining
+                    near-perfect uptime, incorporating iterative improvements
+                    based on continuous user feedback.
                   </p>
                 </div>
               </div>
-            </motion.div>
-          </div>
-        </section>
+            </div>
+          </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="min-h-screen py-20 px-4">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              className="holo-panel p-8 md:p-12"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 neon-text">
-                Get in Touch
-              </h2>
-              <p className="text-lg text-gray-300 mb-8">
-                Interested in working together? Let&apos;s discuss your project.
-              </p>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-4">
-                  <a
-                    href="mailto:nicoherrera0831@gmail.com"
-                    className="cyber-button w-full justify-center flex items-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 mr-2"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                    nicoherrera0831@gmail.com
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/nicoherreradev/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cyber-button w-full justify-center flex items-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 mr-2"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-                    </svg>
-                    LinkedIn
-                  </a>
-                  <a
-                    href="https://github.com/nico-herrera"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cyber-button w-full justify-center flex items-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 mr-2"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                    GitHub
-                  </a>
+          {/* Skills Section */}
+          <section className="mb-16 md:mb-24 w-full md:w-2/3 lg:w-1/2">
+            <h2 className="text-lg md:text-xl mb-4 tracking-tighter text-mono-100">
+              <span className="text-accent-primary">//</span> {"SKILLS"}
+            </h2>
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              <div>
+                <h3 className="text-sm text-mono-200 mb-2">FRONTEND</h3>
+                <ul className="text-sm space-y-1 text-mono-400">
+                  <li>React / Next.js</li>
+                  <li>TypeScript</li>
+                  <li>Tailwind CSS</li>
+                  <li>Three.js / WebGL</li>
+                  <li>Redux / Context API</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm text-mono-200 mb-2">BACKEND</h3>
+                <ul className="text-sm space-y-1 text-mono-400">
+                  <li>Node.js / Express</li>
+                  <li>Python</li>
+                  <li>GraphQL / REST</li>
+                  <li>PostgreSQL / MongoDB</li>
+                  <li>AWS / Azure</li>
+                </ul>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <h3 className="text-sm text-mono-200 mb-2">TOOLS</h3>
+                <ul className="text-sm space-y-1 text-mono-400">
+                  <li>Git / GitHub</li>
+                  <li>Docker</li>
+                  <li>Vercel / Netlify</li>
+                  <li>CI/CD Pipelines</li>
+                  <li>Jest / Testing Library</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm text-mono-200 mb-2">SPECIALTIES</h3>
+                <ul className="text-sm space-y-1 text-mono-400">
+                  <li>UI/UX Design</li>
+                  <li>Performance Optimization</li>
+                  <li>Responsive Design</li>
+                  <li>Accessibility</li>
+                  <li>Agile Methodologies</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Projects Section */}
+          <section className="mb-16 md:mb-24 w-full md:w-2/3 lg:w-1/2">
+            <h2 className="text-lg md:text-xl mb-4 tracking-tighter text-mono-100">
+              <span className="text-accent-primary">//</span> {"PROJECTS"}
+            </h2>
+            <div className="space-y-6">
+              <div className="terminal-panel">
+                <div className="terminal-header">
+                  <div className="text-xs text-mono-400">internal_ai.exe</div>
+                  <div className="flex space-x-1">
+                    <div className="w-2 h-2 rounded-full bg-mono-600"></div>
+                    <div className="w-2 h-2 rounded-full bg-mono-600"></div>
+                    <div className="w-2 h-2 rounded-full bg-accent-primary"></div>
+                  </div>
                 </div>
-                <div className="holo-panel p-6">
-                  <h3 className="text-xl font-bold mb-4 text-neon-blue">
-                    Location
+                <div className="terminal-content">
+                  <h3 className="text-base text-mono-100 mb-2">
+                    Internal AI Project
                   </h3>
-                  <p className="text-gray-300">Austin, Texas</p>
-                  <p className="text-gray-300">
-                    Available for remote work worldwide
+                  <p className="text-sm text-mono-400 mb-2">
+                    Architected and developed an enterprise-grade multi-tenant
+                    platform with role-based access control that securely
+                    isolates client data across organizational boundaries.
                   </p>
+                  <div className="flex space-x-2 text-sm">
+                    <span className="text-accent-primary">Next.js</span>
+                    <span className="text-mono-500">|</span>
+                    <span className="text-accent-primary">TypeScript</span>
+                    <span className="text-mono-500">|</span>
+                    <span className="text-accent-primary">OpenAI</span>
+                    <span className="text-mono-500">|</span>
+                    <span className="text-accent-primary">Azure</span>
+                    <span className="text-mono-500">|</span>
+                    <span className="text-accent-primary">Node.js</span>
+                    <span className="text-mono-500">|</span>
+                    <span className="text-accent-primary">Material UI</span>
+                  </div>
                 </div>
               </div>
-            </motion.div>
-          </div>
-        </section>
-      </main>
 
-      <Footer />
-    </>
+              <div className="terminal-panel">
+                <div className="terminal-header">
+                  <div className="text-xs text-mono-400">nyl_project.exe</div>
+                  <div className="flex space-x-1">
+                    <div className="w-2 h-2 rounded-full bg-mono-600"></div>
+                    <div className="w-2 h-2 rounded-full bg-mono-600"></div>
+                    <div className="w-2 h-2 rounded-full bg-accent-primary"></div>
+                  </div>
+                </div>
+                <div className="terminal-content">
+                  <h3 className="text-base text-mono-100 mb-2">
+                    New York Life
+                  </h3>
+                  <p className="text-sm text-mono-400 mb-2">
+                    Completed integration of critical unfinished features under
+                    tight deadline constraints, preventing significant project
+                    delays and business impact.
+                  </p>
+                  <div className="flex space-x-2 text-sm">
+                    <span className="text-accent-primary">Vue</span>
+                    <span className="text-mono-500">|</span>
+                    <span className="text-accent-primary">TypeScript</span>
+                    <span className="text-mono-500">|</span>
+                    <span className="text-accent-primary">Node.js</span>
+                    <span className="text-mono-500">|</span>
+                    <span className="text-accent-primary">Material UI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Contact Section */}
+          <section className="w-full md:w-2/3 lg:w-1/2">
+            <h2 className="text-lg md:text-xl mb-4 tracking-tighter text-mono-100">
+              <span className="text-accent-primary">//</span> {"CONTACT"}
+            </h2>
+            <div className="flex flex-col space-y-2 mb-6">
+              <a
+                href="mailto:nicoherrera0831@gmail.com"
+                className="text-sm hover:text-accent-primary transition-colors"
+              >
+                nicoherrera0831@gmail.com
+              </a>
+              <a
+                href="https://github.com/nico-herrera"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm hover:text-accent-primary transition-colors"
+              >
+                github.com/nico-herrera
+              </a>
+              <a
+                href="https://linkedin.com/in/nicoherreradev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm hover:text-accent-primary transition-colors"
+              >
+                linkedin.com/in/nicoherreradev
+              </a>
+            </div>
+            <a
+              href="/Nico-Herrera-Resume-20250305.pdf"
+              download
+              className="minimal-button ml-auto inline-block text-sm"
+            >
+              DOWNLOAD CV
+            </a>
+          </section>
+
+          {/* Footer */}
+          <footer className="mt-16 pt-8 border-t border-mono-800 w-full text-right">
+            <p className="text-sm text-mono-500">
+              © {new Date().getFullYear()} Nico Herrera. All rights reserved.
+            </p>
+            <p className="text-sm text-mono-700 mt-1">
+              Built with Next.js and Tailwind CSS
+            </p>
+          </footer>
+        </div>
+      </div>
+
+      {/* Artistic Elements - Now Expanded */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        {/* Circuit Board Lines - Expanded */}
+        <div className="absolute inset-0 opacity-20">
+          {/* Left Side */}
+          <div className="absolute left-10 top-1/4 w-64 h-px bg-accent-primary"></div>
+          <div className="absolute left-20 top-1/4 w-px h-64 bg-accent-primary"></div>
+          <div className="absolute left-20 top-1/4 w-32 h-px bg-accent-primary"></div>
+          <div className="absolute left-52 top-1/4 w-px h-96 bg-accent-primary"></div>
+          <div className="absolute left-52 top-[calc(25%+96px)] w-48 h-px bg-accent-primary"></div>
+
+          <div className="absolute left-5 top-2/4 w-96 h-px bg-accent-primary"></div>
+          <div className="absolute left-5 top-[calc(50%-64px)] w-px h-64 bg-accent-primary"></div>
+          <div className="absolute left-5 top-[calc(50%-64px)] w-32 h-px bg-accent-primary"></div>
+
+          <div className="absolute left-24 bottom-1/4 w-64 h-px bg-accent-primary"></div>
+          <div className="absolute left-24 bottom-[calc(25%-48px)] w-px h-48 bg-accent-primary"></div>
+          <div className="absolute left-24 bottom-[calc(25%-48px)] w-40 h-px bg-accent-primary"></div>
+
+          {/* Center Area - Extending into Content */}
+          <div className="absolute left-1/3 top-1/3 w-1/3 h-px bg-accent-primary"></div>
+          <div className="absolute left-1/3 top-1/3 w-px h-64 bg-accent-primary"></div>
+          <div className="absolute left-1/3 top-[calc(33%+64px)] w-48 h-px bg-accent-primary"></div>
+
+          <div className="absolute left-[45%] bottom-1/4 w-32 h-px bg-accent-primary"></div>
+          <div className="absolute left-[45%] bottom-1/4 w-px h-32 bg-accent-primary"></div>
+        </div>
+
+        {/* Tech Symbols - Larger */}
+        <div className="absolute left-12 top-20 text-accent-primary opacity-30 text-6xl font-mono">
+          {"</"}
+        </div>
+        <div className="absolute left-28 top-[calc(50%-24px)] text-accent-primary opacity-30 text-6xl font-mono">
+          {"[]"}
+        </div>
+        <div className="absolute left-16 bottom-32 text-accent-primary opacity-30 text-6xl font-mono">
+          {"{ }"}
+        </div>
+        <div className="absolute left-[40%] top-40 text-accent-primary opacity-20 text-5xl font-mono">
+          {">"}
+        </div>
+
+        {/* Geometric Shapes - Larger */}
+        <div className="absolute left-40 top-40 w-48 h-48 border border-accent-primary opacity-10 rotate-45"></div>
+        <div className="absolute left-20 top-[calc(50%+40px)] w-32 h-32 border border-accent-primary opacity-10 rounded-full"></div>
+        <div className="absolute left-32 bottom-48 w-40 h-40 border border-accent-primary opacity-10"></div>
+        <div className="absolute left-[35%] top-[60%] w-24 h-24 border border-accent-primary opacity-10 rotate-12"></div>
+
+        {/* Vertical Data Streams - More of them */}
+        <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-accent-primary to-transparent opacity-20"></div>
+        <div className="absolute left-48 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-accent-primary to-transparent opacity-20"></div>
+        <div className="absolute left-[30%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-accent-primary to-transparent opacity-15"></div>
+        <div className="absolute left-[40%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-accent-primary to-transparent opacity-10"></div>
+
+        {/* Horizontal Scan Lines - Multiple */}
+        <div className="absolute left-0 right-0 top-1/3 h-px bg-accent-primary opacity-30 animate-pulse"></div>
+        <div className="absolute left-0 right-0 top-2/3 h-px bg-accent-primary opacity-20 animate-pulse"></div>
+
+        {/* Star Wars-inspired Tech Element - Larger */}
+        <div className="absolute left-24 top-1/3 opacity-20">
+          <div className="w-48 h-48 border-2 border-accent-primary rounded-full relative">
+            <div className="absolute inset-3 border border-accent-primary rounded-full"></div>
+            <div className="absolute inset-6 border border-accent-primary rounded-full"></div>
+            <div className="absolute inset-9 border border-accent-primary rounded-full"></div>
+            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-accent-primary"></div>
+            <div className="absolute top-1/2 left-0 right-0 h-px bg-accent-primary"></div>
+          </div>
+        </div>
+
+        {/* Additional Tech Elements - Larger and More */}
+        <div className="absolute left-10 bottom-20 opacity-20">
+          <div className="w-36 h-36 border border-accent-primary relative">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-20 h-20 border border-accent-primary rotate-45"></div>
+            </div>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-accent-primary"></div>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 bg-accent-primary"></div>
+            <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-accent-primary"></div>
+            <div className="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-accent-primary"></div>
+          </div>
+        </div>
+
+        {/* New Tech Element in Content Area */}
+        <div className="absolute left-[45%] top-[20%] opacity-15">
+          <div className="w-24 h-24 border border-accent-primary relative rotate-45">
+            <div className="absolute inset-2 border border-accent-primary"></div>
+            <div className="absolute inset-4 border border-accent-primary"></div>
+            <div className="absolute inset-6 border border-accent-primary"></div>
+          </div>
+        </div>
+
+        {/* Binary Code - Larger and More */}
+        <div className="absolute left-4 top-60 text-accent-primary opacity-10 text-sm font-mono tracking-widest leading-relaxed">
+          {"01001110 01001001 01000011 01001111"}
+          <br />
+          {"01001000 01000101 01010010 01010010"}
+          <br />
+          {"01000101 01010010 01000001 00100000"}
+          <br />
+          {"01000100 01000101 01010110 00100000"}
+          <br />
+          {"01000011 01001111 01000100 01000101"}
+          <br />
+          {"01010011 01001111 01000110 01010100"}
+          <br />
+        </div>
+
+        <div className="absolute left-[35%] top-[70%] text-accent-primary opacity-5 text-sm font-mono tracking-widest leading-relaxed">
+          {"01010111 01000101 01000010"}
+          <br />
+          {"01000100 01000101 01010110"}
+          <br />
+          {"01000110 01010101 01001100 01001100"}
+          <br />
+          {"01010011 01010100 01000001 01000011 01001011"}
+          <br />
+        </div>
+
+        {/* Animated Pulse Elements - More of them */}
+        <div className="absolute left-16 top-1/4 w-6 h-6 bg-accent-primary rounded-full opacity-10 animate-pulse"></div>
+        <div className="absolute left-40 bottom-1/3 w-6 h-6 bg-accent-primary rounded-full opacity-10 animate-pulse"></div>
+        <div className="absolute left-[38%] top-[45%] w-4 h-4 bg-accent-primary rounded-full opacity-5 animate-pulse"></div>
+        <div className="absolute left-[42%] bottom-[28%] w-3 h-3 bg-accent-primary rounded-full opacity-5 animate-pulse"></div>
+
+        {/* Grid Overlay */}
+        <div className="absolute inset-0 bg-grid-lines opacity-5"></div>
+      </div>
+    </main>
   );
 }
