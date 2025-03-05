@@ -24,11 +24,11 @@ export default function Home() {
             <h1 className="text-2xl md:text-3xl mb-4 tracking-tighter text-mono-100">
               <span className="text-accent-primary">NICO</span> HERRERA
             </h1>
-            <p className="text-sm md:text-base text-mono-400 mb-6">
+            <p className="text-xs md:text-sm text-mono-400 mb-6">
               LEAD SOFTWARE ENGINEER // FULL-STACK DEVELOPER
             </p>
             <div className="h-px w-16 bg-accent-primary ml-auto mb-6"></div>
-            <p className="text-sm md:text-base text-mono-300 max-w-md ml-auto">
+            <p className="text-xs md:text-sm text-mono-300 max-w-md ml-auto">
               Experienced software engineer specializing in architecting and
               delivering client applications from concept through deployment.
               Expert in building innovative, high-performance web solutions.
@@ -52,34 +52,34 @@ export default function Home() {
               <div className="terminal-content">
                 <div className="terminal-line">
                   <span className="terminal-prompt">$</span>
-                  <span className="terminal-text text-sm">
+                  <span className="terminal-text">
                     Lead Software Engineer with expertise in building scalable
                     web applications
                   </span>
                 </div>
                 <div className="terminal-line">
                   <span className="terminal-prompt">$</span>
-                  <span className="terminal-text text-sm">
+                  <span className="terminal-text">
                     Passionate about clean code, user experience, and innovative
                     solutions
                   </span>
                 </div>
                 <div className="terminal-line">
                   <span className="terminal-prompt">$</span>
-                  <span className="terminal-text text-sm">
+                  <span className="terminal-text">
                     Based in Austin, Texas. Available for remote work worldwide
                   </span>
                 </div>
                 <div className="terminal-line">
                   <span className="terminal-prompt">$</span>
-                  <span className="terminal-text text-sm">
+                  <span className="terminal-text">
                     Specializing in React/Next.js, TypeScript, and modern web
                     technologies
                   </span>
                 </div>
               </div>
             </div>
-            <p className="text-sm text-mono-400 ml-auto">
+            <p className="text-xs text-mono-400 ml-auto">
               SYSTEM STATUS:{" "}
               <span className="text-accent-primary">OPERATIONAL</span>
             </p>
@@ -102,19 +102,19 @@ export default function Home() {
                 </div>
                 <div className="terminal-content">
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-base text-mono-100">
+                    <h3 className="text-sm text-mono-100">
                       Lead Full-Stack Engineer
                     </h3>
-                    <span className="text-sm text-accent-primary">
+                    <span className="text-xs text-accent-primary">
                       05/2023 - present
                     </span>
                   </div>
-                  <p className="text-sm text-mono-400 mb-2">
+                  <p className="text-xs text-mono-400 mb-2">
                     Architected and delivered client applications from concept
                     through deployment, consistently meeting deadlines and
                     receiving exceptional client feedback.
                   </p>
-                  <p className="text-sm text-mono-400">
+                  <p className="text-xs text-mono-400">
                     Spearheaded development of a Retrieval-Augmented Generation
                     (RAG) system that significantly streamlined information
                     access.
@@ -133,19 +133,19 @@ export default function Home() {
                 </div>
                 <div className="terminal-content">
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-base text-mono-100">
+                    <h3 className="text-sm text-mono-100">
                       Senior Full-Stack Engineer
                     </h3>
-                    <span className="text-sm text-accent-primary">
+                    <span className="text-xs text-accent-primary">
                       03/2022 - 05/2024
                     </span>
                   </div>
-                  <p className="text-sm text-mono-400 mb-2">
+                  <p className="text-xs text-mono-400 mb-2">
                     Led technical innovation as primary developer in a
                     two-person team for a fintech startup, driving application
                     architecture decisions and feature planning.
                   </p>
-                  <p className="text-sm text-mono-400">
+                  <p className="text-xs text-mono-400">
                     Executed comprehensive platform rebuild while maintaining
                     near-perfect uptime, incorporating iterative improvements
                     based on continuous user feedback.
@@ -162,8 +162,8 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-2 gap-4 mb-6">
               <div>
-                <h3 className="text-sm text-mono-200 mb-2">FRONTEND</h3>
-                <ul className="text-sm space-y-1 text-mono-400">
+                <h3 className="text-xs text-mono-200 mb-2">FRONTEND</h3>
+                <ul className="text-xs space-y-1 text-mono-400">
                   <li>React / Next.js</li>
                   <li>TypeScript</li>
                   <li>Tailwind CSS</li>
@@ -172,8 +172,8 @@ export default function Home() {
                 </ul>
               </div>
               <div>
-                <h3 className="text-sm text-mono-200 mb-2">BACKEND</h3>
-                <ul className="text-sm space-y-1 text-mono-400">
+                <h3 className="text-xs text-mono-200 mb-2">BACKEND</h3>
+                <ul className="text-xs space-y-1 text-mono-400">
                   <li>Node.js / Express</li>
                   <li>Python</li>
                   <li>GraphQL / REST</li>
@@ -184,8 +184,8 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <h3 className="text-sm text-mono-200 mb-2">TOOLS</h3>
-                <ul className="text-sm space-y-1 text-mono-400">
+                <h3 className="text-xs text-mono-200 mb-2">TOOLS</h3>
+                <ul className="text-xs space-y-1 text-mono-400">
                   <li>Git / GitHub</li>
                   <li>Docker</li>
                   <li>Vercel / Netlify</li>
@@ -194,8 +194,8 @@ export default function Home() {
                 </ul>
               </div>
               <div>
-                <h3 className="text-sm text-mono-200 mb-2">SPECIALTIES</h3>
-                <ul className="text-sm space-y-1 text-mono-400">
+                <h3 className="text-xs text-mono-200 mb-2">SPECIALTIES</h3>
+                <ul className="text-xs space-y-1 text-mono-400">
                   <li>UI/UX Design</li>
                   <li>Performance Optimization</li>
                   <li>Responsive Design</li>
@@ -222,15 +222,15 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="terminal-content">
-                  <h3 className="text-base text-mono-100 mb-2">
+                  <h3 className="text-sm text-mono-100 mb-2">
                     Internal AI Project
                   </h3>
-                  <p className="text-sm text-mono-400 mb-2">
+                  <p className="text-xs text-mono-400 mb-2">
                     Architected and developed an enterprise-grade multi-tenant
                     platform with role-based access control that securely
                     isolates client data across organizational boundaries.
                   </p>
-                  <div className="flex space-x-2 text-sm">
+                  <div className="flex space-x-2 text-xs">
                     <span className="text-accent-primary">Next.js</span>
                     <span className="text-mono-500">|</span>
                     <span className="text-accent-primary">TypeScript</span>
@@ -256,15 +256,13 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="terminal-content">
-                  <h3 className="text-base text-mono-100 mb-2">
-                    New York Life
-                  </h3>
-                  <p className="text-sm text-mono-400 mb-2">
+                  <h3 className="text-sm text-mono-100 mb-2">New York Life</h3>
+                  <p className="text-xs text-mono-400 mb-2">
                     Completed integration of critical unfinished features under
                     tight deadline constraints, preventing significant project
                     delays and business impact.
                   </p>
-                  <div className="flex space-x-2 text-sm">
+                  <div className="flex space-x-2 text-xs">
                     <span className="text-accent-primary">Vue</span>
                     <span className="text-mono-500">|</span>
                     <span className="text-accent-primary">TypeScript</span>
@@ -286,7 +284,7 @@ export default function Home() {
             <div className="flex flex-col space-y-2 mb-6">
               <a
                 href="mailto:nicoherrera0831@gmail.com"
-                className="text-sm hover:text-accent-primary transition-colors"
+                className="text-xs hover:text-accent-primary transition-colors"
               >
                 nicoherrera0831@gmail.com
               </a>
@@ -294,7 +292,7 @@ export default function Home() {
                 href="https://github.com/nico-herrera"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm hover:text-accent-primary transition-colors"
+                className="text-xs hover:text-accent-primary transition-colors"
               >
                 github.com/nico-herrera
               </a>
@@ -302,7 +300,7 @@ export default function Home() {
                 href="https://linkedin.com/in/nicoherreradev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm hover:text-accent-primary transition-colors"
+                className="text-xs hover:text-accent-primary transition-colors"
               >
                 linkedin.com/in/nicoherreradev
               </a>
@@ -310,7 +308,7 @@ export default function Home() {
             <a
               href="/Nico-Herrera-Resume-20250305.pdf"
               download
-              className="minimal-button ml-auto inline-block text-sm"
+              className="minimal-button ml-auto inline-block"
             >
               DOWNLOAD CV
             </a>
@@ -318,10 +316,10 @@ export default function Home() {
 
           {/* Footer */}
           <footer className="mt-16 pt-8 border-t border-mono-800 w-full text-right">
-            <p className="text-sm text-mono-500">
+            <p className="text-xs text-mono-500">
               © {new Date().getFullYear()} Nico Herrera. All rights reserved.
             </p>
-            <p className="text-sm text-mono-700 mt-1">
+            <p className="text-xs text-mono-700 mt-1">
               Built with Next.js and Tailwind CSS
             </p>
           </footer>
@@ -358,7 +356,7 @@ export default function Home() {
 
         {/* Tech Symbols - Larger */}
         <div className="absolute left-12 top-20 text-accent-primary opacity-30 text-6xl font-mono">
-          {"< >"}
+          {"</"}
         </div>
         <div className="absolute left-28 top-[calc(50%-24px)] text-accent-primary opacity-30 text-6xl font-mono">
           {"[]"}
@@ -366,10 +364,8 @@ export default function Home() {
         <div className="absolute left-16 bottom-32 text-accent-primary opacity-30 text-6xl font-mono">
           {"{ }"}
         </div>
-
-        {/* Add a cohesive tag symbol instead of separated brackets */}
-        <div className="absolute left-[30%] top-40 text-accent-primary opacity-20 text-5xl font-mono">
-          {"< />"}
+        <div className="absolute left-[40%] top-40 text-accent-primary opacity-20 text-5xl font-mono">
+          {">"}
         </div>
 
         {/* Geometric Shapes - Larger */}
