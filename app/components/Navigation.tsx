@@ -26,19 +26,21 @@ export default function Navigation() {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    // Only handle anchor links (those starting with #)
+    // Only handle anchor links (those starting with #) and home link
+    if (href === "/") {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      setActiveSection(""); // Clear active section for home
+      window.history.pushState(null, "", href);
+      return;
+    }
+
     if (href.startsWith("#")) {
       e.preventDefault();
       const targetId = href.replace("#", "");
-
-      // Handle special case for home
-      if (targetId === "") {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-        return;
-      }
 
       const targetElement = document.getElementById(targetId);
 
@@ -60,6 +62,9 @@ export default function Navigation() {
           top: targetPosition,
           behavior: "smooth",
         });
+
+        // Update active section
+        setActiveSection(targetId);
 
         // Update URL without causing a page reload
         window.history.pushState(null, "", href);
@@ -105,8 +110,16 @@ export default function Navigation() {
   // Track active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
+      // If at the top of the page, set home as active
+      if (window.scrollY < 100) {
+        setActiveSection("");
+        return;
+      }
+
       const sections = document.querySelectorAll("section[id]");
       const scrollPosition = window.scrollY + 100; // Reduced offset for navbar height
+
+      let foundActive = false;
 
       sections.forEach((section) => {
         const sectionTop = (section as HTMLElement).offsetTop;
@@ -118,8 +131,15 @@ export default function Navigation() {
           scrollPosition < sectionTop + sectionHeight
         ) {
           setActiveSection(sectionId);
+          foundActive = true;
         }
       });
+
+      // If no section is active and we're not at the top, keep the current active section
+      // This prevents flickering between sections
+      if (!foundActive && window.scrollY >= 100) {
+        // Keep current active section
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -168,7 +188,9 @@ export default function Navigation() {
                   >
                     <span
                       className={`relative z-10 transition-colors duration-300 ${
-                        activeSection === item.href.replace("#", "")
+                        (item.href === "/" && activeSection === "") ||
+                        (item.href !== "/" &&
+                          activeSection === item.href.replace("#", ""))
                           ? "text-neon-blue"
                           : "text-white hover:text-neon-blue"
                       }`}
@@ -176,7 +198,9 @@ export default function Navigation() {
                       {item.name}
                     </span>
                     {(hoveredIndex === index ||
-                      activeSection === item.href.replace("#", "")) && (
+                      (item.href === "/" && activeSection === "") ||
+                      (item.href !== "/" &&
+                        activeSection === item.href.replace("#", ""))) && (
                       <motion.span
                         layoutId="navbar-hover"
                         className="absolute inset-0 -z-10 bg-holo-light rounded-sm"
@@ -265,7 +289,9 @@ export default function Navigation() {
                     <Link
                       href={item.href}
                       className={`holo-panel block py-4 px-6 text-center font-mono text-lg uppercase tracking-wider w-full ${
-                        activeSection === item.href.replace("#", "")
+                        (item.href === "/" && activeSection === "") ||
+                        (item.href !== "/" &&
+                          activeSection === item.href.replace("#", ""))
                           ? "border-neon-blue"
                           : ""
                       }`}
@@ -276,7 +302,9 @@ export default function Navigation() {
                     >
                       <span
                         className={
-                          activeSection === item.href.replace("#", "")
+                          (item.href === "/" && activeSection === "") ||
+                          (item.href !== "/" &&
+                            activeSection === item.href.replace("#", ""))
                             ? "text-neon-blue"
                             : "text-white"
                         }
