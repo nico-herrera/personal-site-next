@@ -358,7 +358,7 @@ export default function Home() {
 
         {/* Tech Symbols - Larger */}
         <div className="absolute left-12 top-20 text-accent-primary opacity-30 text-6xl font-mono">
-          {"</"}
+          {"< >"}
         </div>
         <div className="absolute left-28 top-[calc(50%-24px)] text-accent-primary opacity-30 text-6xl font-mono">
           {"[]"}
@@ -366,8 +366,10 @@ export default function Home() {
         <div className="absolute left-16 bottom-32 text-accent-primary opacity-30 text-6xl font-mono">
           {"{ }"}
         </div>
-        <div className="absolute left-[40%] top-40 text-accent-primary opacity-20 text-5xl font-mono">
-          {">"}
+
+        {/* Add a cohesive tag symbol instead of separated brackets */}
+        <div className="absolute left-[30%] top-40 text-accent-primary opacity-20 text-5xl font-mono">
+          {"< />"}
         </div>
 
         {/* Geometric Shapes - Larger */}
