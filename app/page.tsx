@@ -235,8 +235,6 @@ export default function Home() {
                     <span className="text-mono-500">|</span>
                     <span className="text-accent-primary">TypeScript</span>
                     <span className="text-mono-500">|</span>
-                    <span className="text-accent-primary">OpenAI</span>
-                    <span className="text-mono-500">|</span>
                     <span className="text-accent-primary">Azure</span>
                     <span className="text-mono-500">|</span>
                     <span className="text-accent-primary">Node.js</span>
