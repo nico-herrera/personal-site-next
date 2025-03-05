@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favicon Instructions</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      color: #00f3ff;
+      border-bottom: 2px solid #00f3ff;
+      padding-bottom: 10px;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+    .preview {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin: 20px 0;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+    .preview img {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Futuristic Halo-Inspired Favicon</h1>
+  
+  <div class="preview">
+    <img src="public/favicon.svg" alt="Favicon Preview">
+    <div>
+      <p><strong>Preview of your new favicon</strong></p>
+      <p>This SVG favicon features a futuristic design with neon blue elements that match your website's aesthetic.</p>
+    </div>
+  </div>
+  
+  <h2>How to Use This Favicon</h2>
+  
+  <h3>1. In Next.js</h3>
+  <p>For Next.js 13+ with the App Router, update your <code>app/layout.tsx</code> file:</p>
+  <pre><code>export const metadata: Metadata = {
+  title: "Nico Herrera | Lead Software Engineer",
+  description: "...",
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+  },
+};</code></pre>
+
+  <h3>2. For Better Browser Compatibility</h3>
+  <p>For maximum compatibility, consider using a service like <a href="https://realfavicongenerator.net/" target="_blank">RealFaviconGenerator</a> to convert the SVG to multiple formats.</p>
+  
+  <h3>3. Manual HTML Implementation</h3>
+  <p>If you need to manually add it to your HTML, add this to your <code>&lt;head&gt;</code> section:</p>
+  <pre><code>&lt;link rel="icon" href="/favicon.svg" type="image/svg+xml"&gt;</code></pre>
+  
+  <h2>About This Favicon</h2>
+  <p>The favicon features:</p>
+  <ul>
+    <li>A futuristic design inspired by Halo aesthetics</li>
+    <li>Neon blue color scheme matching your website</li>
+    <li>Your "NH" initials integrated into the design</li>
+    <li>Subtle animation effects (visible in supporting browsers)</li>
+  </ul>
+  
+  <p>The SVG format provides crisp rendering at any size and supports animations.</p>
+</body>
+</html>

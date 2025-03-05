@@ -14,9 +14,15 @@ const jetBrainsMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Nico Herrera | Software Engineer",
+  title: "Nico Herrera | Lead Software Engineer",
   description:
-    "Full-stack software engineer specializing in cutting-edge web technologies and innovative solutions.",
+    "Lead Full-stack Software Engineer specializing in cutting-edge web technologies and innovative solutions.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export default function RootLayout({
