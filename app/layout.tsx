@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description:
     "Lead Full-stack Software Engineer specializing in cutting-edge web technologies and innovative solutions.",
   icons: {
-    icon: [{ url: "/favicon.ico", sizes: "any" }],
+    icon: [{ url: "/favicon.svg", sizes: "any" }],
   },
 };
 
