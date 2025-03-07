@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import ogImage from "./preview.jpg";
+import ogImage from "../public/preview.png";
 
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
