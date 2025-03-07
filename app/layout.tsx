@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nico Herrera | Software Engineer",
+    title: "Nico Herrera | Lead Software Engineer",
     description:
       "Lead Full-stack Software Engineer specializing in cutting-edge web technologies and innovative solutions.",
     images: ["/preview.png"],
