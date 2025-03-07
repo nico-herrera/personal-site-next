@@ -4,16 +4,11 @@
 
 @layer base {
   :root {
-    --cursor-color: 0, 243, 255;
+    --cursor-color: 0, 240, 255;
   }
 
   * {
-    cursor: none;
-  }
-
-  ::selection {
-    background: rgba(var(--cursor-color), 0.2);
-    color: rgb(var(--cursor-color));
+    @apply selection:bg-accent-dim selection:text-accent-primary;
   }
 
   html {
@@ -21,7 +16,20 @@
   }
 
   body {
-    overflow-x: hidden;
+    @apply bg-bg text-mono-300 font-mono text-sm antialiased overflow-x-hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display text-mono-100 tracking-tight;
+  }
+
+  a {
+    @apply text-accent-primary hover:text-mono-100 transition-colors duration-300;
   }
 
   /* Add scroll margin to sections with IDs (for anchor links) */
@@ -31,41 +39,65 @@
 }
 
 @layer components {
-  .holo-panel {
-    @apply relative backdrop-blur-xl bg-holo border border-holo-light rounded-lg;
-    box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+  .terminal-panel {
+    @apply relative bg-bg-light border border-mono-700 rounded-sm overflow-hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
-  .neon-text {
-    @apply font-bold;
-    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5),
-      0 0 20px rgba(0, 243, 255, 0.3), 0 0 30px rgba(0, 243, 255, 0.1);
+  .terminal-header {
+    @apply flex items-center justify-between px-3 py-1 bg-mono-800 border-b border-mono-700;
   }
 
-  .cyber-button {
-    @apply relative px-6 py-2 font-mono text-sm uppercase tracking-wider text-neon-blue 
-           border border-neon-blue rounded-sm transition-all duration-300
-           hover:bg-neon-blue/10 hover:shadow-[0_0_20px_rgba(0,243,255,0.3)]
-           active:translate-y-1;
+  .terminal-content {
+    @apply p-4;
   }
 
-  .cyber-grid {
-    background-size: 50px 50px;
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 243, 255, 0.1) 1px,
-        transparent 1px
-      ),
-      linear-gradient(to bottom, rgba(0, 243, 255, 0.1) 1px, transparent 1px);
+  .terminal-line {
+    @apply flex items-start mb-1;
+  }
+
+  .terminal-prompt {
+    @apply text-accent-primary mr-2;
+  }
+
+  .terminal-text {
+    @apply text-mono-300;
+  }
+
+  .minimal-button {
+    @apply px-4 py-1 text-xs uppercase tracking-widest text-mono-300 
+           border border-mono-700 transition-all duration-300
+           hover:border-accent-primary hover:text-accent-primary;
+  }
+
+  .grid-background {
+    @apply bg-grid-lines;
+  }
+
+  .scan-line {
+    @apply absolute inset-0 pointer-events-none opacity-10;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 240, 255, 0.2) 50%,
+      transparent 100%
+    );
+    height: 100%;
+    width: 100%;
+    animation: scan-line 2s linear infinite;
   }
 }
 
 @layer utilities {
-  .mask-radial {
-    mask-image: radial-gradient(circle at center, black, transparent 70%);
+  .text-right-align {
+    @apply text-right;
   }
 
   .text-glow {
-    text-shadow: 0 0 10px currentColor;
+    text-shadow: 0 0 5px currentColor;
+  }
+
+  .border-glow {
+    box-shadow: 0 0 5px currentColor;
   }
 }
