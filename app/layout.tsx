@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/preview.png",
         width: 1200,
         height: 630,
         alt: "Nico Herrera - Software Engineer",
@@ -48,12 +48,22 @@ export const metadata: Metadata = {
     title: "Nico Herrera | Software Engineer",
     description:
       "Lead Full-stack Software Engineer specializing in cutting-edge web technologies and innovative solutions.",
-    images: ["/og-image.svg"],
+    images: ["/preview.png"],
     creator: "@nicoherrera",
   },
   icons: {
-    icon: [{ url: "/favicon.svg", sizes: "any" }],
-    apple: [{ url: "/favicon.svg" }],
+    icon: [
+      { url: "/favicon.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon.svg", sizes: "any", type: "image/svg+xml" },
+    ],
+    shortcut: ["/favicon.png"],
+    apple: [{ url: "/favicon.png", sizes: "180x180", type: "image/png" }],
+    other: [
+      {
+        rel: "apple-touch-icon-precomposed",
+        url: "/favicon.png",
+      },
+    ],
   },
   alternates: {
     canonical: "https://nicoherrera.com",
@@ -62,6 +72,7 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "black-translucent",
     title: "Nico Herrera",
+    startupImage: ["/preview.png"],
   },
   formatDetection: {
     telephone: false,
@@ -69,6 +80,15 @@ export const metadata: Metadata = {
   other: {
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
+    "og:image": "/preview.png",
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    "og:image:alt": "Nico Herrera - Software Engineer",
+    "og:image:type": "image/png",
+    "og:description":
+      "Lead Full-stack Software Engineer specializing in cutting-edge web technologies and innovative solutions.",
+    "msapplication-TileImage": "/favicon.png",
+    "msapplication-TileColor": "#0a0e17",
   },
 };
 
