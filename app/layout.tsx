@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import ogImage from "../public/opengraph-image.png";
 
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
@@ -20,6 +19,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: "#0a0e17",
+  viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
@@ -35,21 +35,12 @@ export const metadata: Metadata = {
     siteName: "Nico Herrera Portfolio",
     locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: ogImage.src,
-        width: 1200,
-        height: 630,
-        alt: "Nico Herrera - Lead Software Engineer",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Nico Herrera | Lead Software Engineer",
     description:
       "Lead Full-stack Software Engineer specializing in cutting-edge web technologies and innovative solutions.",
-    images: [ogImage.src],
     creator: "@nicoherrera",
   },
   icons: {
@@ -58,11 +49,14 @@ export const metadata: Metadata = {
       { url: "/favicon.svg", sizes: "any", type: "image/svg+xml" },
     ],
     shortcut: ["/favicon.png"],
-    apple: [{ url: "/favicon.png", sizes: "180x180", type: "image/png" }],
+    apple: [
+      { url: "/favicon.png", sizes: "180x180", type: "image/png" },
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
     other: [
       {
         rel: "apple-touch-icon-precomposed",
-        url: "/favicon.png",
+        url: "/apple-icon.png",
       },
     ],
   },
@@ -73,7 +67,32 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "black-translucent",
     title: "Nico Herrera",
-    startupImage: [ogImage.src],
+    startupImage: [
+      {
+        url: "/apple-touch-startup-image.png",
+        media:
+          "(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)",
+      },
+      {
+        url: "/apple-touch-startup-image.png",
+        media:
+          "(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)",
+      },
+      {
+        url: "/apple-touch-startup-image.png",
+        media:
+          "(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)",
+      },
+      {
+        url: "/apple-touch-startup-image.png",
+        media:
+          "(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)",
+      },
+      {
+        url: "/apple-touch-startup-image.png",
+        media: "(min-device-width: 768px) and (max-device-width: 1024px)",
+      },
+    ],
   },
   formatDetection: {
     telephone: false,
@@ -81,18 +100,9 @@ export const metadata: Metadata = {
   other: {
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
-    "og:image": ogImage.src,
-    "og:image:width": "1200",
-    "og:image:height": "630",
-    "og:image:alt": "Nico Herrera - Lead Software Engineer",
-    "og:description":
-      "Lead Full-stack Software Engineer specializing in cutting-edge web technologies and innovative solutions.",
-    "og:url": "https://nicoherrera.com",
-    "og:type": "website",
-    "og:title": "Nico Herrera | Lead Software Engineer",
+    "apple-mobile-web-app-title": "Nico Herrera",
     "msapplication-TileImage": "/favicon.png",
     "msapplication-TileColor": "#0a0e17",
-    "apple-mobile-web-app-title": "Nico Herrera",
   },
 };
 
