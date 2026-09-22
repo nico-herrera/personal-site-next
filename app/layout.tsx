@@ -23,14 +23,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Nico Herrera | Lead Software Engineer",
-  description:
-    "Lead Full-stack Software Engineer specializing in cutting-edge web technologies and innovative solutions.",
+  title: "Taking a Hiatus | Nico Herrera",
+  description: "Nico Herrera is taking a hiatus.",
   metadataBase: new URL("https://nicoherrera.com"),
   openGraph: {
-    title: "Nico Herrera | Lead Software Engineer",
-    description:
-      "Lead Full-stack Software Engineer specializing in cutting-edge web technologies and innovative solutions.",
+    title: "Taking a Hiatus | Nico Herrera",
+    description: "Nico Herrera is taking a hiatus.",
     url: "https://nicoherrera.com",
     siteName: "Nico Herrera Portfolio",
     locale: "en_US",
@@ -38,9 +36,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nico Herrera | Lead Software Engineer",
-    description:
-      "Lead Full-stack Software Engineer specializing in cutting-edge web technologies and innovative solutions.",
+    title: "Taking a Hiatus | Nico Herrera",
+    description: "Nico Herrera is taking a hiatus.",
     creator: "@nicoherrera",
   },
   icons: {
